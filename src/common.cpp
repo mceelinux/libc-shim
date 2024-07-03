@@ -268,6 +268,10 @@ uint32_t shim::arc4random() {
     return 0; // TODO:
 }
 
+int shim::openat(int dirfd, const char *pathname, int flags) {
+    return -1; // Just return the error value, just so it thinks it's a valid thing :)
+}
+
 void* shim::__memcpy_chk(void *dst, const void *src, size_t size, size_t max_len) {
     if (size > max_len) {
         fprintf(stderr, "detected copy past buffer size");

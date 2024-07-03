@@ -103,6 +103,8 @@ namespace shim {
 
     uint32_t arc4random();
 
+    int openat(int dirfd, const char *pathname, int flags);
+
     void *__memcpy_chk(void *dst, const void *src, size_t size, size_t max_len);
 
     void *__memmove_chk(void *dst, const void *src, size_t size, size_t max_len);
